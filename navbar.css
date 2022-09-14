@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Bitter:ital,wght@1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap');
+
+@import url('main.css');
+
+
+.navbar {
+    top: 0;
+    position: fixed;
+    display: flex;
+    
+    width: 100vw;
+    height: var(--navbheight);
+    overflow: hidden;
+}
+.navbar ul {
+    display: flex;
+    width: 40%;
+    white-space: nowrap;
+    height: var(--fullheight);
+    margin-left: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    justify-content: space-around;
+}
+.navbar ul li {
+    display: flex;
+    height: var(--fullheight);
+    list-style-type: none;
+}
+.navbar ul li a {
+    
+    margin: auto;
+    width: max-content;
+    transition: 0.3s;
+    overflow: visible;
+    text-decoration: none;
+    font-size: var(--tspc);
+    color: rgb(0, 0, 0);
+}
+.navbar ul li a:hover {
+    transform: translateY(-10%);
+}
+.logoDis {
+    float: right;
+    display: block;
+    width: fit-content;
+    height: fit-content;
+}
+.logoTukTak::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background: rgb(255, 0, 0);
+    transition: all 1s;
+    z-index: 2;
+}
+.logoTukTak {
+    position: relative;
+    margin-left: 10px;
+    margin-top: auto;
+    margin-bottom: auto;
+    
+    float: left;
+    
+    display: block;
+    background-size: 100%;
+
+    
+    width: 3.5vw;
+    height:2.5vw;
+    transition: 2s;
+}
+
+.logoDis p {
+    display: inline;
+}
+
+.logoTukTak:hover::before {
+    transform: translateX(10vw);
+}
+
+/*---Phone Devices Settings-----*/
+@media only screen and (min-device-width: 280px) and (max-device-width: 901px) and (-webkit-min-device-pixel-ratio: 2) {
+    .navbar {
+        position: sticky;
+    }
+    .navbar ul li a {
+        font-size: var(--tsphone);
+    }
+    .navbar ul {
+        overflow: visible;
+        width: 80%;
+    }
+    .navbar ul li {
+        overflow: visible;
+        margin-inline: 0.5%;
+    }
+    .logoTukTak {
+        height: var(--lg-ph);
+        width: var(--lg-ph);
+    }
+    
+}
+@media only screen and (min-device-width: 768px) and (max-device-width: 1500px) and (-webkit-min-device-pixel-ratio: 1) {
+    .navbar ul li a {
+        width: max-content;
+        font-size: var(--tstabled);
+    }
+    .navbar ul {
+        justify-items: center;
+        width: 80%;
+    }
+    .navbar ul li {
+        width: max-content;
+    }
+    .logoTukTak {
+        height: var(--lg-tab);
+        width: var(--lg-tab);
+    }
+    
+}
